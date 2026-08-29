@@ -1,0 +1,87 @@
+('S:\\CODE\\CLARA-Desktop Assistant\\build_temp\\clara\\BABY.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'S:\\CODE\\CLARA-Desktop Assistant\\build_temp\\clara\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\build_temp\\clara\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\build_temp\\clara\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\build_temp\\clara\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\build_temp\\clara\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\build_temp\\clara\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_setuptools',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_setuptools.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgres',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgres.py',
+   'PYSOURCE'),
+  ('pyi_rth_pywintypes',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_pywintypes.py',
+   'PYSOURCE'),
+  ('pyi_rth_pythoncom',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_pythoncom.py',
+   'PYSOURCE'),
+  ('pyi_rth_nltk',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_nltk.py',
+   'PYSOURCE'),
+  ('pyi_rth_cryptography_openssl',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_cryptography_openssl.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('pyi_rth_pyside6',
+   'S:\\CODE\\CLARA-Desktop '
+   'Assistant\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pyside6.py',
+   'PYSOURCE'),
+  ('main', 'S:\\CODE\\CLARA-Desktop Assistant\\main.py', 'PYSOURCE')],
+ 'python311.dll',
+ True,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)

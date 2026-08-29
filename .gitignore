@@ -1,0 +1,61 @@
+# Git ignored files for Clara
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Model files (large binaries — store separately)
+models/
+!models/.gitkeep
+
+# Runtime data
+data/
+!data/.gitkeep
+
+# Encryption keys (NEVER commit these)
+*.key
+.biometric.key
+
+# Local config may contain secrets (e.g. gemini_api_key) — keep out of git
+config.yaml
+!.gitkeep
+
+# Local secrets file (Gemini key etc.) — NEVER commit
+.env
+
+# Logs
+*.log
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Screenshots
+data/screenshots/
+
+# Conversations
+data/conversations/
+
+# Scratch & temporary test scripts
+scratch/
+
+# Large binaries & model weights
+*.onnx
+*.bin
+*.exe
+build_temp/
+vendor/
+index-j0JdoH0M.js

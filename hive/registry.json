@@ -1,0 +1,112 @@
+{
+  "god_id": "Baby",
+  "agents": {
+    "Baby": {
+      "id": "Baby",
+      "name": "Baby",
+      "provider": "ollama",
+      "role": "orchestrator",
+      "capabilities": [
+        "planning",
+        "routing",
+        "memory",
+        "voice",
+        "consent"
+      ],
+      "cwd": "S:\\CODE\\BABY\\hive\\agents\\Baby",
+      "status": "idle",
+      "session_id": "",
+      "archived": false,
+      "cwd_valid": true
+    },
+    "system": {
+      "id": "system",
+      "name": "System Agent",
+      "provider": "ollama",
+      "role": "worker",
+      "capabilities": [
+        "file_ops",
+        "app_launch",
+        "clipboard",
+        "system_commands"
+      ],
+      "cwd": "S:\\CODE\\BABY\\hive\\agents\\system",
+      "status": "idle",
+      "session_id": "",
+      "archived": false,
+      "cwd_valid": true
+    },
+    "browser": {
+      "id": "browser",
+      "name": "Browser Agent",
+      "provider": "ollama",
+      "role": "worker",
+      "capabilities": [
+        "web_search",
+        "navigation",
+        "url_open",
+        "fetch_page"
+      ],
+      "cwd": "S:\\CODE\\BABY\\hive\\agents\\browser",
+      "status": "idle",
+      "session_id": "",
+      "archived": false,
+      "cwd_valid": true
+    },
+    "vision": {
+      "id": "vision",
+      "name": "Vision Agent",
+      "provider": "ollama",
+      "role": "worker",
+      "capabilities": [
+        "screenshot",
+        "ocr",
+        "ui_pointing",
+        "camera",
+        "screen_share"
+      ],
+      "cwd": "S:\\CODE\\BABY\\hive\\agents\\vision",
+      "status": "idle",
+      "session_id": "",
+      "archived": false,
+      "cwd_valid": true
+    },
+    "context": {
+      "id": "context",
+      "name": "Context Agent",
+      "provider": "ollama",
+      "role": "worker",
+      "capabilities": [
+        "memory_store",
+        "memory_recall",
+        "memory_list",
+        "memory_delete"
+      ],
+      "cwd": "S:\\CODE\\BABY\\hive\\agents\\context",
+      "status": "idle",
+      "session_id": "",
+      "archived": false,
+      "cwd_valid": true
+    },
+    "learner": {
+      "id": "learner",
+      "name": "Learner Agent",
+      "provider": "ollama",
+      "role": "worker",
+      "capabilities": [
+        "web_search",
+        "content_synthesis",
+        "skill_learning",
+        "rag"
+      ],
+      "cwd": "S:\\CODE\\BABY\\hive\\agents\\learner",
+      "status": "idle",
+      "session_id": "",
+      "archived": false,
+      "cwd_valid": true
+    }
+  }
+}
+
+
+

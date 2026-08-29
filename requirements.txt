@@ -1,0 +1,101 @@
+# ============================================================
+# Baby Desktop AI Assistant — Python Dependencies
+# Python 3.11+ required
+# ============================================================
+
+# --- Wake Word ---
+openwakeword>=0.6.0
+
+# --- Audio I/O ---
+# PyAudio — Windows: install via prebuilt wheel (plain pip requires C compiler)
+#   pip install pipwin && pipwin install pyaudio
+#   OR: pip install PyAudio‑0.2.14‑cp311‑cp311‑win_amd64.whl (from https://www.lfd.uci.edu/~gohlke/pythonlibs/)
+# macOS/Linux: pip install pyaudio
+pyaudio>=0.2.14  ; sys_platform != "win32"
+sounddevice>=0.4.6
+soundfile>=0.12.1
+numpy>=1.26.0,<2.0.0   # <2 required: pandas<2 (TTS dep) + openwakeword/sentence-transformers/presidio wheels are numpy-1.x ABI
+
+# --- VAD (Voice Activity Detection) ---
+# Silero VAD is loaded via torch.hub at runtime — no pip install needed
+torch>=2.1.0
+torchaudio>=2.1.0
+
+# --- Speech-to-Text ---
+faster-whisper>=1.0.0
+
+# --- LLM Inference ---
+ollama>=0.3.0
+airllm>=2.1.0
+transformers>=4.38.0
+accelerate>=0.27.0
+safetensors>=0.4.0
+
+# --- Text-to-Speech ---
+edge-tts>=7.0.0           # Primary Neural TTS (fluent native voices for Kannada, Hindi & English)
+miniaudio>=1.71           # MP3 audio decoding
+kokoro-onnx>=0.4.0        # Fallback TTS (lightweight, fast)
+TTS>=0.22.0             # Coqui XTTS-v2 (multilingual)
+
+# --- Windows Volume Control (pycaw) ---
+comtypes>=1.4.0           # pycaw dependency (Windows COM interop)
+pycaw>=20181223           # Windows audio endpoint volume control (adjust_volume)
+
+# --- UI ---
+# Pinned to 6.8.3: Qt 6.10.2 / 6.11.1 crash with 0xC0000005 on Windows
+# (SignalManager stale-wrapper AV on QML window create, qwindows.dll AV on teardown)
+PySide6==6.8.3
+
+# --- Screen Capture ---
+mss>=9.0.1
+pytesseract>=0.3.13       # OCR for live screen text location
+
+# --- Browser Automation ---
+playwright>=1.44.0
+
+# --- System Automation ---
+pyautogui>=0.9.54
+psutil>=5.9.8
+pillow>=10.3.0
+
+# --- Biometric Recognition ---
+insightface>=0.7.3
+resemblyzer>=0.1.1.dev0
+onnxruntime>=1.17.1       # Required by InsightFace
+opencv-python>=4.9.0.80
+
+# --- Encryption & Security ---
+cryptography>=42.0.0
+keyring>=25.2.0
+
+# --- Privacy & PII Redaction ---
+presidio-analyzer>=2.2.0
+presidio-anonymizer>=2.2.0
+spacy>=3.7.0
+
+# --- Autonomous Learning (RAG) ---
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# --- Utilities ---
+pyyaml>=6.0.1
+aiofiles>=23.2.1
+rich>=13.7.1               # Beautiful terminal output
+loguru>=0.7.2              # Structured logging
+qasync>=0.23.0             # Asyncio event loop integration for Qt
+omegaconf>=2.3.0           # Required by Silero TTS
+pynput>=1.7.6              # Required for keyboard hotkey fallback
+indic-transliteration>=2.3.0 # Required for Indic TTS transliteration
+uiautomation>=2.0.0         # Windows UI Automation (uia_locate_element pointer feature)
+
+# --- Math & Symbolic Computation ---
+sympy>=1.12.0              # Symbolic mathematics (equations, calculus, algebra)
+numpy>=1.26.0,<2.0.0       # Numerical computation (already listed above for audio)
+
+# --- PDF Processing ---
+PyMuPDF>=1.24.0            # Primary PDF reader (fitz) - text extraction, metadata
+pypdf>=4.0.0               # Fallback PDF reader
+
+
+
+

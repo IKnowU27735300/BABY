@@ -1,0 +1,6 @@
+{"ts": 1786984254.9002926, "type": "agent_registered", "agent_id": "clara", "name": "Clara"}
+{"ts": 1786984254.9036002, "type": "agent_registered", "agent_id": "system", "name": "System Agent"}
+{"ts": 1786984254.9130256, "type": "agent_registered", "agent_id": "browser", "name": "Browser Agent"}
+{"ts": 1786984254.9159684, "type": "agent_registered", "agent_id": "vision", "name": "Vision Agent"}
+{"ts": 1786984254.9190567, "type": "agent_registered", "agent_id": "context", "name": "Context Agent"}
+{"ts": 1786984254.9216578, "type": "agent_registered", "agent_id": "learner", "name": "Learner Agent"}
