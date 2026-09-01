@@ -201,6 +201,38 @@ class RelationshipEngineConfig:
 
 
 @dataclass
+class CircuitBreakerConfig:
+    enabled: bool = True
+    max_consecutive_errors: int = 5
+    max_consecutive_dupes: int = 3
+    max_output_tokens_per_min: int = 10000
+    cost_cap_usd: float = 0.0
+    window_seconds: float = 60.0
+
+
+@dataclass
+class ReflectConfig:
+    enabled: bool = True
+    interval_s: float = 180.0
+    byte_trigger_pct: int = 80
+    section_trigger: int = 10
+    min_bytes: int = 4096
+    recent_keep: int = 3
+
+
+@dataclass
+class HiveConfig:
+    enabled: bool = True
+    hive_root: str = "data/hive"
+    auto_mode: bool = True
+    router_interval_s: float = 2.0
+    mission_control_enabled: bool = True
+    completion_watcher_enabled: bool = True
+    circuit_breaker: CircuitBreakerConfig = field(default_factory=CircuitBreakerConfig)
+    reflect: ReflectConfig = field(default_factory=ReflectConfig)
+
+
+@dataclass
 class BabyConfig:
     app: AppConfig = field(default_factory=AppConfig)
     llm: LLMConfig = field(default_factory=LLMConfig)
@@ -217,6 +249,7 @@ class BabyConfig:
     learner: LearnerConfig = field(default_factory=LearnerConfig)
     home_assistant: HomeAssistantConfig = field(default_factory=HomeAssistantConfig)
     relationship_engine: RelationshipEngineConfig = field(default_factory=RelationshipEngineConfig)
+    hive: HiveConfig = field(default_factory=HiveConfig)
 
     @classmethod
     def load(cls, path: str = "config.yaml") -> "BabyConfig":
@@ -336,6 +369,22 @@ class BabyConfig:
                 purity_check_interval_s=re_data.get("purity_check_interval_s", 300.0),
             )
 
+        # Hive
+        if "hive" in data:
+            h = data["hive"] or {}
+            cb_data = h.get("circuit_breaker") or {}
+            ref_data = h.get("reflect") or {}
+            cfg.hive = HiveConfig(
+                enabled=h.get("enabled", True),
+                hive_root=h.get("hive_root", "data/hive"),
+                auto_mode=h.get("auto_mode", True),
+                router_interval_s=h.get("router_interval_s", 2.0),
+                mission_control_enabled=h.get("mission_control_enabled", True),
+                completion_watcher_enabled=h.get("completion_watcher_enabled", True),
+                circuit_breaker=CircuitBreakerConfig(**{k: v for k, v in cb_data.items() if hasattr(CircuitBreakerConfig, k)}),
+                reflect=ReflectConfig(**{k: v for k, v in ref_data.items() if hasattr(ReflectConfig, k)}),
+            )
+
         return cfg
 
     def save(self, path: str = "config.yaml"):
@@ -387,6 +436,16 @@ class BabyConfig:
                 "learning_rate": self.relationship_engine.learning_rate,
                 "explain_by_default": self.relationship_engine.explain_by_default,
                 "purity_check_interval_s": self.relationship_engine.purity_check_interval_s,
+            },
+            "hive": {
+                "enabled": self.hive.enabled,
+                "hive_root": self.hive.hive_root,
+                "auto_mode": self.hive.auto_mode,
+                "router_interval_s": self.hive.router_interval_s,
+                "mission_control_enabled": self.hive.mission_control_enabled,
+                "completion_watcher_enabled": self.hive.completion_watcher_enabled,
+                "circuit_breaker": dataclasses.asdict(self.hive.circuit_breaker),
+                "reflect": dataclasses.asdict(self.hive.reflect),
             },
         }
         

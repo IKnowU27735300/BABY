@@ -70,9 +70,14 @@ class BabyApp:
             if candidate.exists():
                 icon_path = str(candidate)
         else:
-            candidate = Path(__file__).resolve().parent.parent / "dist" / "BABY.ico"
-            if candidate.exists():
-                icon_path = str(candidate)
+            candidates = [
+                Path(__file__).resolve().parent.parent / "assets" / "BABY.ico",
+                Path(__file__).resolve().parent.parent / "dist" / "BABY.ico",
+            ]
+            for candidate in candidates:
+                if candidate.exists():
+                    icon_path = str(candidate)
+                    break
         if icon_path:
             from PySide6.QtGui import QIcon
             self._qt_app.setWindowIcon(QIcon(icon_path))

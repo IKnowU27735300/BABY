@@ -20,7 +20,9 @@ datas = [
 ]
 
 # Bundle the app icon so it's available in the frozen build
-icon_path = project_dir / "dist" / "BABY.ico"
+icon_path = project_dir / "assets" / "BABY.ico"
+if not icon_path.exists():
+    icon_path = project_dir / "dist" / "BABY.ico"
 if icon_path.exists():
     datas.append((str(icon_path), "."))
 
@@ -318,7 +320,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=str(project_dir / "dist" / "BABY.ico") if (project_dir / "dist" / "BABY.ico").exists() else None,
+    icon=str(project_dir / "assets" / "BABY.ico") if (project_dir / "assets" / "BABY.ico").exists() else (str(project_dir / "dist" / "BABY.ico") if (project_dir / "dist" / "BABY.ico").exists() else None),
 )
 
 coll = COLLECT(

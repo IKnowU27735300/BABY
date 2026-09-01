@@ -20,9 +20,15 @@ def _app_icon_path() -> str | None:
     """
     if getattr(sys, "frozen", False):
         candidate = Path(sys._MEIPASS) / "icons" / "BABY.ico"
+        return str(candidate) if candidate.exists() else None
     else:
-        candidate = Path(__file__).resolve().parent.parent / "dist" / "BABY.ico"
-    return str(candidate) if candidate.exists() else None
+        for candidate in [
+            Path(__file__).resolve().parent.parent / "assets" / "BABY.ico",
+            Path(__file__).resolve().parent.parent / "dist" / "BABY.ico",
+        ]:
+            if candidate.exists():
+                return str(candidate)
+        return None
 
 
 def _make_icon(color: str, size: int = 32) -> QIcon:
